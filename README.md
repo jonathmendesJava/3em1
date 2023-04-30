@@ -1,5 +1,6 @@
 ## 🔨 Funcionalidades do projeto
 
+- `Funcionalidade` `Ambientação com rotas`: Objetivo principal do projeto é se ambientar e conectar rotas.
 - `Funcionalidade 1` `Calculo Imc`: Calcular o Imc, que é um cálculo simples que permite medir se alguém está ou não com o peso ideal.
 - `Funcionalidade 2` `Qr-Code`: Tranformar QualQuer link em Qr-Code.
 - `Funcionalidade 3` `Conversor Dolar`: Converter o Dolar Usando uma Api que é atualizada diariamente.
