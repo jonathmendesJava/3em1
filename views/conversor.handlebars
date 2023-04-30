@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleConversor.css">
+    <title>Cotação</title>
+</head>
+      <body>
+        <section class="container">
+          <div class="secao">
+          <div>
+            <h1>Cotação do Dólar</h1>
+            <p>Cotação dólar para real.</p>
+      <hr>
+          </div>
+      <div>
+        <span>USD -</span>
+          <input type="number" class="brl" id="usd-input" placeholder="Dólar">
+            <button id="convert-btn">Converter</button>
+          </div>
+
+      <hr>
+
+      <div class="resultado">
+        <span>BRL -</span>
+          <input type="number" id="result" disabled>
+            </div>
+    
+      <script>
+        const cotacao = {{cotacao}};
+        //fazendo a função para converter
+        const converter = () => {
+          const usdInput = document.getElementById("usd-input");
+          const resultInput = document.getElementById("result");
+
+          const usd = parseFloat(usdInput.value);
+          const brl = usd * cotacao;
+
+          resultInput.value = brl.toFixed(2);
+        };
+
+        const convertBtn = document.getElementById("convert-btn");
+        convertBtn.addEventListener("click", converter);
+        //adicionando conversão pelo enter
+        const usdInput = document.getElementById("usd-input");
+        usdInput.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            converter();
+          }
+        });
+      </script>
+      </div>
+    </section>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Imc</title>      
+    <link rel="stylesheet" href="/css/styleimc.css">
+</head>
+  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <body>
+      <div class='body'>
+        <h1>Calculadora de Imc</h1>
+    <hr />
+      <div class="inputs1">
+        <label for="">
+          Peso:
+            <input class='inpPeso' type="number" value="{{peso}}" placeholder="kg" onchange="setPeso(event.target.value)"/>
+              </label>
+      <br />
+        <label for="">
+          Altura:
+            <input class='inpAltura' type="number" value="{{altura}}" placeholder="m" onchange="setAltura(event.target.value)"/>
+              </label>
+      </div>
+        <div>                  
+          <button id="calcular">Calcular</button>
+        </div>
+    <br />
+        <p>Seu Imc é: {{imc2}} ou 0</p>
+          <hr />
+            <p>Seu Status é: {{status}} ou "-"</p>
+            <hr />
+      <footer>
+        <div>
+          <img src="https://viverbem.unimedbh.com.br/wp-content/uploads/2021/06/tabela-IMC.png"/>
+            </div>
+      </footer>
+  </div>     
+
+<script>
+    const pesoInput = document.querySelector('.inpPeso');
+    const alturaInput = document.querySelector('.inpAltura');
+    const calcularButton = document.querySelector('#calcular');
+
+    let peso = '';
+    let altura = '';
+    let status = '';
+    let imc2 = '';
+
+    pesoInput.addEventListener('input', (event) => {
+        peso = event.target.value;
+    });
+
+    alturaInput.addEventListener('input', (event) => {
+        altura = event.target.value;
+    });
+
+    calcularButton.addEventListener('click', () => {
+        const imc = peso / (altura * altura);
+        imc2 = imc.toFixed(2);
+
+        if (imc < 18.5) {
+            status = 'Abaixo do peso';
+        } else if (imc < 25) {
+            status = 'Peso normal';
+        } else if (imc < 30) {
+            status = 'Acima do peso';
+        }else{
+            status = 'Obesidade';
+        }
+
+        document.querySelector('p:nth-of-type(1)').textContent = `Seu Imc é: ${imc2 || '0'}`;
+        document.querySelector('p:nth-of-type(2)').textContent = `Seu Status é: ${status || '-'}`;
+    });
+</script>
+  </div>
+    </body>
+</html>

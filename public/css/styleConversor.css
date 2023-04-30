@@ -1,0 +1,68 @@
+body {
+    background-image: url('https://images.unsplash.com/photo-1568581357391-c71a1675ef93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');    
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.secao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 20px;
+    text-align: center;   
+  }
+  
+  .secao > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+  }
+  
+  .resultado {
+    margin-top: 20px;
+  }
+  
+  .input1,
+  .input2 {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+  }
+  
+  button {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+    .secao {
+      margin: 10px;
+      padding: 10px;
+    }
+  
+    .input1,
+    .input2 {
+      padding: 5px;
+      margin: 5px;
+    }
+  
+    button {
+      margin: 5px;
+      padding: 5px 10px;
+    }
+  }
+  
